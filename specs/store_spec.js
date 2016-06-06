@@ -28,14 +28,23 @@ describe('Store', function() {
     assert.deepEqual({title: "Bonxie", artist: "Stornoway", purchasePrice: 5, retailPrice: 10, stock: 20}, hmv.findRecord("title", "Bonxie"))
   })
 
-  // it('should be able to sell stock', function() {
-  //   var sale1 = new Record('Bonxie', 'Stornoway', 5, 10, 1)
-  //   hmv.sellRecord(sale1)
-  //   assert.deepEqual({title: "Bonxie", artist: "Stornoway", purchasePrice: 5, retailPrice: 10, stock: 19}, hmv.findRecord("title", "Bonxie"))
-  // })
+  it('should be able to sell stock', function() {
+    var purchase1 = new Record('Bonxie', 'Stornoway', 5, 10, 20)
+    hmv.addRecord(purchase1)
+    hmv.sellRecord(purchase1, 1)
+    assert.deepEqual({title: "Bonxie", artist: "Stornoway", purchasePrice: 5, retailPrice: 10, stock: 19}, hmv.findRecord("title", "Bonxie"))
+  })
 
   // it('should be able to list the stock', function() {
+  //   // var purchase1 = new Record('Bonxie', 'Stornoway', 5, 10, 20)
+  //   // hmv.addRecord(purchase1)
   //   assert.deepEqual({title: "Bonxie", artist: "Stornoway", purchasePrice: 5, retailPrice: 10, stock: 20}, hmv.records)
   // })
+
+  // it('should be able to list the stock and balance of the store', function() {
+
+  // })
+
+
     
 })

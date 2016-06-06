@@ -1,3 +1,6 @@
+var Store = require('./store.js');
+var Customer = require('./customer.js');
+var Record = require('./record.js');
 var _ = require('lodash');
 
 var Record = function(title, artist, purchasePrice, retailPrice, stock) {

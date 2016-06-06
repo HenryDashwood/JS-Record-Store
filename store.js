@@ -1,10 +1,13 @@
+var Store = require('./store.js');
+var Customer = require('./customer.js');
+var Record = require('./record.js');
 var _ = require('lodash');
 
 var Store = function(name, city, balance) {
   this.name = name;
   this.city = city;
   this.balance = balance;
-  this.records = []
+  this.records = [];
 }
 
 Store.prototype = {
@@ -22,15 +25,11 @@ Store.prototype = {
     }
     return "Unable to find record";
   },
-  // sellRecord: function(keyName, value) {
-  //   for(record of this.records) {
-  //     if(record[keyName] === value) {
-  //       this.records.slice
-  //       return this.records;
-  //     }
-  //   }
-  //   return "Not enough stock left";
-  // }
+  sellRecord: function(title, quantity) {
+    console.log(this.stock)
+    var found = this.findRecord('title')
+    this.found[stock] -= quantity
+  }
   // listRecords: function() {
   //   return this.records;
   // }
